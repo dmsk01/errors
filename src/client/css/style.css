@@ -1,0 +1,88 @@
+#error-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 10000;
+}
+
+.toast-block {
+  background-color: tomato;
+  border-radius: 10px;
+  padding: 20px 60px;
+  margin: 20px 0;
+  font-size: 28px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0.1s;
+}
+
+.toast-block.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* loader */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+.loader-container{
+  position: relative;
+  height: 50vmin;
+  width: 50vmin;
+}
+
+.text{
+  text-align: center;
+  color: rgb(110, 143, 185);
+  font-family: arial;
+  font-size: 2.5rem;
+}
+
+.ball{
+  position: absolute;
+  top: 25vmin;
+  height: 10vmin;
+  width: 10vmin;
+  background: rgb(181, 190, 221);
+  border-radius: 100%;
+  transform-origin: -10vmin center;
+}
+.ball-2{
+  right: 12.5vmin;
+  animation: linear 3s infinite sheep1;
+}
+.ball-1{
+  right: -2.5vmin;
+  animation: linear 3s infinite sheep2;
+}
+
+@keyframes sheep1{
+  33%{
+    transform: rotate(0deg);
+  }
+  66%{
+    transform: rotate(-180deg);
+  }
+  100%{
+    transform: rotate(-180deg) translate(-30vmin);
+  }
+}
+
+@keyframes sheep2{
+  33%, 66%{
+    transform: rotate(-180deg);
+  }
+  100%{
+    transform: rotate(-180deg) translate(-30vmin);
+}
